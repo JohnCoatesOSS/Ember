@@ -1,0 +1,44 @@
+{
+  "name": "Ember",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Ember description",
+  "homepage_url": "http://www.ember.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "src/options/index.html",
+  "browser_action": {
+    "default_popup": "build/popup.html"
+  },
+  "permissions": [
+    "storage",
+    "contentSettings",
+    "*://*.everlane.com/*"
+  ],
+  "web_accessible_resources": [
+    "build/embedded.js"
+  ],
+  "background": {
+    "scripts": ["build/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.everlane.com/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "build/inject.js"
+      ]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://*.everlane.com/*"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+}
