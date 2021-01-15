@@ -10,7 +10,7 @@ export class FirebaseConfig {
         this.configured = true
 
         const config = {
-            apiKey: "AIzaSyDYQRjwz7NYknd2w48H3wuMARS-phFQwAk",
+            apiKey: "API_KEY",
             authDomain: "ember-extension.firebaseapp.com",
             databaseURL: "https://ember-extension.firebaseio.com",
             projectId: "ember-extension",
